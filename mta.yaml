@@ -1,0 +1,96 @@
+_schema-version: '3.1'
+ID: sample.ui5.uaa
+version: 0.0.1
+
+parameters:
+  enable-parallel-deployments: true
+
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm install
+        - npx cds build
+
+modules:
+  - name: sample-ui5-uaa-srv
+    type: nodejs
+    path: gen/srv
+    parameters:
+      memory: 256M
+    parameters-metadata:
+      memory:
+        optional: false
+    properties:
+      EXIT: 1 # required by deploy.js task to terminate
+      LOG_REMOTE_USER: true # fill remote_user with the req.user.id --> This does not work! https://answers.sap.com/questions/13497765/3-different-packages-provided-by-sap-for-logging-i.html
+      features.kibana_formatter: true # https://cap.cloud.sap/docs/node.js/cds-log#cds-log-ootb-formatting-kibana
+      VERSION: 1.2.1
+
+    build-parameters:
+      ignore:
+        - default-*.json
+        - 'node_modules/'
+        - package-lock.json
+    requires:
+      - name: sample-ui5-uaa-uaa
+      - name: sample-ui5-uaa-dest
+      - name: sample-ui5-uaa-logs
+    provides:
+      - name: srv-api # required by consumers of CAP services (e.g. approuter)
+        properties:
+          srv-url: ${default-url}
+
+  - name: sample-ui5-uaa-app
+    type: html5
+    path: app
+    parameters:
+      memory: 256M
+    parameters-metadata:
+      memory:
+        optional: false
+    properties:
+      SESSION_TIMEOUT: 720
+      VERSION: 1.2.1
+
+    build-parameters:
+      ignore:
+        - default-*.json
+        - 'node_modules/'
+        - package-lock.json
+      builder: custom
+      commands:
+        - npm install
+        - npm run build # https://github.com/SAP/cloud-mta-build-tool/issues/907
+    requires:
+      - name: sample-ui5-uaa-uaa
+      - name: sample-ui5-uaa-dest
+      - name: sample-ui5-uaa-logs
+      - name: srv-api
+        group: destinations
+        properties:
+          forwardAuthToken: true
+          name: srv-api
+          url: '~{srv-url}'
+
+resources:
+  - name: sample-ui5-uaa-uaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: ${default-xsappname}
+
+  - name: sample-ui5-uaa-dest
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+
+  - name: sample-ui5-uaa-logs
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: application-logs
+      service-plan: lite

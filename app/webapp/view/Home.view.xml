@@ -1,0 +1,43 @@
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  controllerName="sample.ui5.uaa.controller.Home"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:f="sap.f"
+  xmlns:fb="sap.ui.comp.filterbar">
+  <Page
+    class="sapUiContentPadding"
+    showHeader="false">
+    <Button text="Open My Profile" press=".openSFDeeplink($event, '/sf/liveprofile', true)" />
+    <fb:FilterBar
+      id="filterbar"
+      useToolbar="false"
+      showClearOnFB="true"
+      search=".onSearch"
+      clear=".onClear">
+      <fb:filterItems>
+        <fb:FilterItem
+          name="Name"
+          label="Employee Name">
+          <fb:control>
+            <Input id="EmployeeSearch" />
+          </fb:control>
+        </fb:FilterItem>
+      </fb:filterItems>
+    </fb:FilterBar>
+    <List
+      id="EmployeeList"
+      items="{view>/users}"
+      headerText="Employees"
+      growing="true"
+      growingThreshold="10"
+      growingScrollToLoad="true">
+      <StandardListItem
+        title="{view>firstName} {view>lastName}"
+        description=""
+        iconDensityAware="false"
+        iconInset="false"
+      />
+    </List>
+  </Page>
+</mvc:View>

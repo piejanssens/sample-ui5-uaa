@@ -1,0 +1,58 @@
+{
+  "authenticationMethod": "route",
+  "welcomeFile": "/webapp/index.html",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "source": "^/favicon.ico",
+      "target": "favicon.ico",
+      "localDir": "webapp",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/webapp/index.html(.*)$",
+      "localDir": "dist",
+      "target": "index.html$1",
+      "cacheControl": "no-store",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/webapp/sap-ui-cachebuster-info.json(.*)$",
+      "localDir": "dist",
+      "target": "sap-ui-cachebuster-info.json$1",
+      "cacheControl": "no-store",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/dbg/(.*)$",
+      "authenticationType": "xsuaa",
+      "target": "$1",
+      "cacheControl": "no-store",
+      "localDir": "webapp"
+    },
+    {
+      "source": "^/webapp/~(.*)~/(.*)$",
+      "target": "$2",
+      "localDir": "dist",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/webapp/(.*)$",
+      "target": "$1",
+      "localDir": "dist",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "/ci/(.*)$",
+      "authenticationType": "xsuaa",
+      "destination": "srv-api"
+    },
+    {
+      "source": "/v2/ci/(.*)$",
+      "authenticationType": "xsuaa",
+      "destination": "srv-api"
+    }
+  ]
+}

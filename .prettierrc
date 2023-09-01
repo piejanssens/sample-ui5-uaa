@@ -1,0 +1,13 @@
+---
+printWidth: 120
+tabWidth: 2
+bracketSameLine: true
+singleQuote: true
+semi: false
+trailingComma: all
+xmlWhitespaceSensitivity: ignore
+xmlSelfClosingSpace: true
+singleAttributePerLine: true
+quoteProps: as-needed
+plugins:
+  - '@prettier/plugin-xml'

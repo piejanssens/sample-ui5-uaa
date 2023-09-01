@@ -1,0 +1,31 @@
+{
+  "env": {
+    "es2022": true,
+    "node": true,
+    "jest": true,
+    "mocha": true
+  },
+  "globals": {
+    "SELECT": true,
+    "INSERT": true,
+    "UPSERT": true,
+    "UPDATE": true,
+    "DELETE": true,
+    "CREATE": true,
+    "DROP": true,
+    "CDL": true,
+    "CQL": true,
+    "cds": true
+  },
+  "plugins": ["sonarjs"],
+  "extends": ["eslint:recommended", "plugin:sonarjs/recommended", "prettier", "plugin:@sap/cds/recommended"],
+  "rules": {
+    "no-unused-vars": ["error", { "args": "none" }],
+    "dot-notation": "error",
+    "camelcase": "warn",
+    "no-unneeded-ternary": "error",
+    "no-useless-concat": "error",
+    "sonarjs/no-duplicate-string": "warn",
+    "sonarjs/cognitive-complexity": "warn"
+  }
+}

@@ -1,0 +1,23 @@
+default-env.json
+*.zip
+gen/
+node_modules/
+target/
+dist/
+.husky
+.vscode
+
+# IDE
+.vscode/
+
+# MTA
+*_mta_build_tmp
+*.mtar
+mta_archives/
+mta-op*
+
+# Other
+.DS_Store
+*.orig
+*.log
+.eslintcache
