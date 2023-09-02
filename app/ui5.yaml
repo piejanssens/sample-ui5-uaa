@@ -28,10 +28,12 @@ server:
       configuration:
         debug: false
         authenticationMethod: route
+        appendAuthRoute: true
         allowServices: true
         allowLocalDir: true
         port: 5005
         xsappJson: xs-app.json
+        disableWelcomeFile: true
         destinations:
           - name: srv-api
             url: http://localhost:4004

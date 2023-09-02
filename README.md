@@ -19,8 +19,8 @@ npm run deploy
 ## Run locally
 
 - From root of your project:
-  ```console
-  cf default-env sample-ui5-uaa-app && mv default-env.json ./app``
+  ```sh
+  cf default-env sample-ui5-uaa-app && mv default-env.json ./app
   cf default-env sample-ui5-uaa-srv
   ```
 - Open a new terminal and run `npm run watch`
@@ -28,6 +28,6 @@ npm run deploy
 
 ## Workaround 401 errors
 
-- Open the link in a new tab (this will send the request without "XMLHTTPX-Requested-With:
+- Open the link in a new tab (this will send the request without "X-Requested-With:
   XMLHttpRequest" header and let the @sap/approuter kick off its auth flow)
 - Once the UAA session exists, change the port back to 8080
