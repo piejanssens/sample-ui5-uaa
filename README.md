@@ -32,7 +32,7 @@ npm run watch
 cd app && npm run serve
 ```
 
-## Run locally, using `cds-plugin-ui`
+## Run locally, using `cds-plugin-ui5`
 
 ```sh
 npm run watch
