@@ -16,6 +16,9 @@ dist/
 mta_archives/
 mta-op*
 
+# TypeScript
+tsconfig.tsbuildinfo
+
 # Other
 .DS_Store
 *.orig
