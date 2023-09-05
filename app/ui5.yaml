@@ -3,6 +3,9 @@ metadata:
   name: sample.ui5.uaa.ui
 type: application
 
+customConfiguration:
+  mountPath: /
+
 framework:
   name: SAPUI5
   version: '1.117.1'
