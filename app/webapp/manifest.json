@@ -16,7 +16,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/ci/",
+        "uri": "ci/",
         "type": "OData",
         "settings": {
           "odataVersion": "4.0"

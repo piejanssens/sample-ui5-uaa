@@ -32,7 +32,7 @@ sap.ui.define(
           operationMode: 'Server',
           synchronizationMode: 'None',
           groupId: '$direct',
-          serviceUrl: '/ci/',
+          serviceUrl: this.getOwnerComponent().getManifestEntry("/sap.app/dataSources/mainService/uri"),
         })
 
         this._listBinding = oModel.bindList('/User')
