@@ -5,7 +5,7 @@
     "node": "^18"
   },
   "dependencies": {
-    "@sap/approuter": "^14.3.1"
+    "@sap/approuter": "^14.3.2"
   },
   "scripts": {
     "start": "node node_modules/@sap/approuter/approuter.js",
@@ -15,15 +15,15 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@sapui5/types": "^1.117.1",
-    "@typescript-eslint/eslint-plugin": "^6.6.0",
-    "@typescript-eslint/parser": "^6.6.0",
+    "@sapui5/types": "^1.118.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
     "@ui5/cli": "^3.6.0",
     "@ui5/ts-interface-generator": "^0.8.1",
     "typescript": "^5.2.2",
-    "ui5-middleware-cfdestination": "^3.1.4",
+    "ui5-middleware-cfdestination": "^3.2.0",
     "ui5-middleware-index": "^3.0.2",
     "ui5-middleware-livereload": "^3.0.0",
-    "ui5-tooling-transpile": "^3.2.2"
+    "ui5-tooling-transpile": "^3.2.3"
   }
 }
