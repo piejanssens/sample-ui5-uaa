@@ -8,7 +8,6 @@
   <Page
     class="sapUiContentPadding"
     showHeader="false">
-    <Button text="Open My Profile" press=".openSFDeeplink($event, '/sf/liveprofile', true)" />
     <fb:FilterBar
       id="filterbar"
       useToolbar="false"
