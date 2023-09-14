@@ -3,9 +3,12 @@ metadata:
   name: sample.ui5.uaa.ui
 type: application
 
+#customConfiguration:
+#  mountPath: /
+
 framework:
   name: SAPUI5
-  version: '1.117.1'
+  version: '1.118.0'
   libraries:
     - name: sap.f
     - name: sap.m
@@ -26,14 +29,14 @@ server:
     - name: ui5-middleware-cfdestination
       afterMiddleware: ui5-tooling-transpile-middleware
       configuration:
-        debug: false
+        debug: true
         authenticationMethod: route
         appendAuthRoute: true
         allowServices: true
         allowLocalDir: true
         port: 5005
         xsappJson: xs-app.json
-        disableWelcomeFile: true
+        disableWelcomeFile: false
         destinations:
           - name: srv-api
             url: http://localhost:4004

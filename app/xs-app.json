@@ -1,6 +1,9 @@
 {
   "authenticationMethod": "route",
   "welcomeFile": "/webapp/index.html",
+  "login": {
+    "callbackEndpoint": "/login/callback"
+  },
   "logout": {
     "logoutEndpoint": "/do/logout"
   },
@@ -45,12 +48,12 @@
       "authenticationType": "xsuaa"
     },
     {
-      "source": "/ci/(.*)$",
+      "source": "^/ci/(.*)$",
       "authenticationType": "xsuaa",
       "destination": "srv-api"
     },
     {
-      "source": "/v2/ci/(.*)$",
+      "source": "^/v2/ci/(.*)$",
       "authenticationType": "xsuaa",
       "destination": "srv-api"
     }
