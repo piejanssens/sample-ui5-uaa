@@ -19,7 +19,8 @@
       "http://localhost:8080/login/callback",
       "http://localhost:5005/login/callback",
       "http://localhost:5000/login/callback",
-      "http://localhost:4004/login/callback"
+      "http://localhost:4004/login/callback",
+      "http://localhost:4004/sample.ui5.uaa.ui/login/callback"
     ]
   }
 }
