@@ -1,0 +1,48 @@
+{
+  "name": "sample.ui5.uaa",
+  "version": "0.0.1",
+  "engines": {
+    "node": "^18"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch": "cds watch --livereload false --profile local",
+    "build": "mbt build --mtar build.mtar",
+    "deploy": "cf deploy ./mta_archives/build.mtar --version-rule ALL",
+    "pretty": "./node_modules/.bin/prettier . --write"
+  },
+  "dependencies": {
+    "@sap-cloud-sdk/connectivity": "^3.5.0",
+    "@sap-cloud-sdk/http-client": "^3.5.0",
+    "@sap/cds": "^7.2.0",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "passport": "^0.6.0"
+  },
+  "devDependencies": {
+    "@prettier/plugin-xml": "^3.2.1",
+    "@sap/eslint-plugin-cds": "^2.6.3",
+    "cds-plugin-ui5": "^0.6.8",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-sonarjs": "^0.21.0",
+    "prettier": "^3.0.3"
+  },
+  "cds": {
+    "requires": {
+      "[local]": {
+        "auth": {
+          "kind": "xsuaa"
+        }
+      },
+      "uaa": {
+        "kind": "xsuaa"
+      }
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
+}
