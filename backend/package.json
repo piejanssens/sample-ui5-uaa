@@ -14,13 +14,13 @@
   "dependencies": {
     "@sap-cloud-sdk/connectivity": "^3.5.0",
     "@sap-cloud-sdk/http-client": "^3.5.0",
-    "@sap/cds": "^7.2.0",
+    "@sap/cds": "^7.3.0",
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
     "passport": "^0.6.0"
   },
   "devDependencies": {
-    "sample.ui5.uaa.ui": "file:../app",
-    "cds-plugin-ui5": "^0.6.8"
+    "cds-plugin-ui5": "^0.6.8",
+    "sample.ui5.uaa.ui": "file:../app"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
