@@ -6,7 +6,7 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch": "cds watch --livereload false --profile local",
+    "watch": "cds watch --profile local",
     "build": "mbt build --mtar build.mtar",
     "deploy": "cf deploy ./mta_archives/build.mtar --version-rule ALL",
     "pretty": "./node_modules/.bin/prettier . --write"
