@@ -19,27 +19,8 @@
     "passport": "^0.6.0"
   },
   "devDependencies": {
-    "@prettier/plugin-xml": "^3.2.1",
-    "@sap/eslint-plugin-cds": "^2.6.3",
-    "cds-plugin-ui5": "^0.6.8",
-    "eslint": "^8.49.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-sonarjs": "^0.21.0",
-    "prettier": "^3.0.3"
-  },
-  "cds": {
-    "requires": {
-      "[local]": {
-        "auth": {
-          "kind": "xsuaa"
-        }
-      },
-      "uaa": {
-        "kind": "xsuaa"
-      }
-    }
+    "sample.ui5.uaa.ui": "file:../app",
+    "cds-plugin-ui5": "^0.6.8"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",

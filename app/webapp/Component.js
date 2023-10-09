@@ -2,15 +2,13 @@ sap.ui.define(
   [
     'sap/ui/core/UIComponent',
     'sap/ui/Device',
-    './model/models',
     'sap/ui/core/ComponentSupport', // https://github.com/SAP/ui5-tooling/issues/381
   ],
   /**
    * @param {typeof import('sap/ui/core/UIComponent').default} UIComponent
    * @param {typeof import('sap/ui/Device').default} Device
-   * @param {OverSampleType.ui5.uaa.models} models
    */
-  function (UIComponent, Device, models) {
+  function (UIComponent, Device) {
     'use strict'
 
     return UIComponent.extend('sample.ui5.uaa.Component', {
@@ -22,9 +20,6 @@ sap.ui.define(
       init: function (...args) {
         // call the base component's init function
         UIComponent.prototype.init.apply(this, args)
-
-        // set the device model
-        this.setModel(models.createDeviceModel(), 'device')
 
         // create the views based on the url/hash
         this.getRouter().initialize()
