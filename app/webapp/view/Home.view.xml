@@ -6,8 +6,8 @@
   xmlns:f="sap.f"
   xmlns:fb="sap.ui.comp.filterbar">
   <Page
-    class="sapUiContentPadding"
-    showHeader="false">
+    class="sapUiContentPadding" title="Header Is Shown"
+    showHeader="true">
     <fb:FilterBar
       id="filterbar"
       useToolbar="false"

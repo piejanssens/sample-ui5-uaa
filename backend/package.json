@@ -1,0 +1,27 @@
+{
+  "name": "sample.ui5.uaa",
+  "version": "0.0.1",
+  "engines": {
+    "node": "^18"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch": "cds watch --profile local",
+    "build": "mbt build --mtar build.mtar",
+    "deploy": "cf deploy ./mta_archives/build.mtar --version-rule ALL"
+  },
+  "dependencies": {
+    "@sap-cloud-sdk/connectivity": "^3.5.0",
+    "@sap-cloud-sdk/http-client": "^3.5.0",
+    "@sap/cds": "^7.3.0",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "passport": "^0.6.0"
+  },
+  "devDependencies": {
+    "sample.ui5.uaa.ui": "file:../app"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
+}

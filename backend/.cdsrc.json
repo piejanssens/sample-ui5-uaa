@@ -1,0 +1,12 @@
+{
+  "requires": {
+    "[local]": {
+      "auth": {
+        "kind": "xsuaa"
+      }
+    },
+    "uaa": {
+      "kind": "xsuaa"
+    }
+  }
+}

@@ -9,18 +9,13 @@
   },
   "scripts": {
     "start": "node node_modules/@sap/approuter/approuter.js",
+    "dev": "PORT=5005 node ../node_modules/@sap/approuter/approuter.js",
     "serve": "ui5 serve -o",
     "serve:dist": "npm run build && ui5 serve -o /webapp/index.html",
-    "build": "ui5 build --include-task=generateCachebusterInfo",
-    "typecheck": "tsc --noEmit"
+    "build": "ui5 build --include-task=generateCachebusterInfo"
   },
   "devDependencies": {
-    "@sapui5/types": "^1.118.0",
-    "@typescript-eslint/eslint-plugin": "^6.7.0",
-    "@typescript-eslint/parser": "^6.7.0",
     "@ui5/cli": "^3.6.0",
-    "@ui5/ts-interface-generator": "^0.8.1",
-    "typescript": "^5.2.2",
     "ui5-middleware-cfdestination": "^3.2.0",
     "ui5-middleware-index": "^3.0.2",
     "ui5-middleware-livereload": "^3.0.0",

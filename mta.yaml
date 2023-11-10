@@ -9,13 +9,13 @@ build-parameters:
   before-all:
     - builder: custom
       commands:
-        - npm install
-        - npx cds build
+        - npm -w backend install
+        - npx cds build backend
 
 modules:
   - name: sample-ui5-uaa-srv
     type: nodejs
-    path: gen/srv
+    path: backend/gen/srv
     parameters:
       memory: 256M
     parameters-metadata:
@@ -43,7 +43,7 @@ modules:
 
   - name: sample-ui5-uaa-app
     type: html5
-    path: app
+    path: frontend
     parameters:
       memory: 256M
     parameters-metadata:
