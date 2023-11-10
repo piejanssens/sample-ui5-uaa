@@ -8,8 +8,7 @@
     "start": "cds-serve",
     "watch": "cds watch --profile local",
     "build": "mbt build --mtar build.mtar",
-    "deploy": "cf deploy ./mta_archives/build.mtar --version-rule ALL",
-    "pretty": "./node_modules/.bin/prettier . --write"
+    "deploy": "cf deploy ./mta_archives/build.mtar --version-rule ALL"
   },
   "dependencies": {
     "@sap-cloud-sdk/connectivity": "^3.5.0",
@@ -19,7 +18,6 @@
     "passport": "^0.6.0"
   },
   "devDependencies": {
-    "cds-plugin-ui5": "^0.6.8",
     "sample.ui5.uaa.ui": "file:../app"
   },
   "lint-staged": {

@@ -8,7 +8,7 @@ type: application
 
 framework:
   name: SAPUI5
-  version: '1.118.0'
+  version: '1.120.0'
   libraries:
     - name: sap.f
     - name: sap.m
@@ -29,7 +29,6 @@ server:
     - name: ui5-middleware-cfdestination
       afterMiddleware: ui5-tooling-transpile-middleware
       configuration:
-        debug: true
         authenticationMethod: route
         appendAuthRoute: true
         allowServices: true

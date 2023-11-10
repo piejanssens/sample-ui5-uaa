@@ -29,13 +29,6 @@
       "authenticationType": "xsuaa"
     },
     {
-      "source": "^/dbg/(.*)$",
-      "authenticationType": "xsuaa",
-      "target": "$1",
-      "cacheControl": "no-store",
-      "localDir": "webapp"
-    },
-    {
       "source": "^/webapp/~(.*)~/(.*)$",
       "target": "$2",
       "localDir": "dist",
@@ -49,11 +42,6 @@
     },
     {
       "source": "^/ci/(.*)$",
-      "authenticationType": "xsuaa",
-      "destination": "srv-api"
-    },
-    {
-      "source": "^/v2/ci/(.*)$",
       "authenticationType": "xsuaa",
       "destination": "srv-api"
     }

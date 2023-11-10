@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node node_modules/@sap/approuter/approuter.js",
+    "dev": "PORT=5005 node ../node_modules/@sap/approuter/approuter.js",
     "serve": "ui5 serve -o",
     "serve:dist": "npm run build && ui5 serve -o /webapp/index.html",
     "build": "ui5 build --include-task=generateCachebusterInfo"
